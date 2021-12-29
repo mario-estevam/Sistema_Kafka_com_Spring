@@ -1,0 +1,26 @@
+{
+    "type": "record",
+    "name": "People",
+    "namespace": "com.example.kafkaspring",
+    "fields": [
+        {
+            "name":"id",
+            "type":"string"
+        },
+         {
+            "name":"name",
+            "type":"string"
+        },
+         {
+            "name":"cpf",
+            "type":"string"
+        },
+         {
+            "name":"movies",
+            "type": {
+                "type": "array",
+                "items": "string"
+            }
+        }
+    ]
+}
