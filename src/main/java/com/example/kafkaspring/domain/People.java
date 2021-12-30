@@ -1,14 +1,17 @@
 package com.example.kafkaspring.domain;
 
 
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Builder
 @Entity
 public class People {
     @Id
@@ -18,6 +21,6 @@ public class People {
     private String name;
     private String cpf;
 
-    @OneToMany(mappedBy = "people")
+    @OneToMany(mappedBy = "people", cascade = CascadeType.ALL)
     private List<Movie> movies;
 }

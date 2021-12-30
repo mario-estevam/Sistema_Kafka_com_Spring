@@ -15,17 +15,16 @@ public class PeopleProducer {
     private final String topicName;
     private final KafkaTemplate<String, People> kafkaTemplate;
 
-    public PeopleProducer(@Value("${topic.name}")String topicName, KafkaTemplate<String, People> kafkaTemplate) {
+
+    public PeopleProducer(@Value("${topic.name}") String topicName, KafkaTemplate<String, People> kafkaTemplate) {
         this.topicName = topicName;
         this.kafkaTemplate = kafkaTemplate;
     }
 
-
     public void sendMessage(People people){
         kafkaTemplate.send(topicName,(String) people.getId(), people).addCallback(
-                success -> log.info("deu certo"),
-                failure -> log.error("deu ruim")
+                success -> log.info("Mensagem Enviada com sucesso !"),
+                failure -> log.error("Falha ao Enviar Mensagem !")
         );
     }
-
 }

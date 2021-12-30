@@ -15,17 +15,17 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Controller
-@RequestMapping("/peopless")
-
+@RequestMapping("/peoples")
 @AllArgsConstructor
 public class PeopleController {
 
-    private final PeopleProducer peopleProducer; //injeção de dependencias do produtor
+    private final PeopleProducer peopleProducer;
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> sendMessage(@RequestBody PeopleDTO peopleDTO){ // metodo que envia mensagem, e recebe como argumento o DTO
+    public ResponseEntity<Void> sendMessage(@RequestBody PeopleDTO peopleDTO) {
         var id = UUID.randomUUID().toString();
-        var message = People.newBuilder() // People criado pelo avro
+
+        var message = People.newBuilder()
                 .setId(id)
                 .setName(peopleDTO.getName())
                 .setCpf(peopleDTO.getCpf())
@@ -33,6 +33,8 @@ public class PeopleController {
                 .build();
 
         peopleProducer.sendMessage(message);
+
         return ResponseEntity.status(HttpStatus.CREATED).build();
+
     }
 }
