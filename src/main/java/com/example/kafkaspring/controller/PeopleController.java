@@ -25,7 +25,7 @@ public class PeopleController {
     public ResponseEntity<Void> sendMessage(@RequestBody PeopleDTO peopleDTO) {
         var id = UUID.randomUUID().toString();
 
-        var message = People.newBuilder()
+        var message = People.newBuilder() // instancia do objeto avro que foi criado, depois dessa instancia é passado os valores dele
                 .setId(id)
                 .setName(peopleDTO.getName())
                 .setCpf(peopleDTO.getCpf())

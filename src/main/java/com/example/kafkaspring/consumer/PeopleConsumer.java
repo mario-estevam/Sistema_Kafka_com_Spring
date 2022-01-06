@@ -20,13 +20,13 @@ public class PeopleConsumer {
 
     private final PeopleRepository peopleRepository;
 
-    @KafkaListener(topics = "${topic.name}")
-    public void consumer(ConsumerRecord<String, People> record, Acknowledgment ack){
+    @KafkaListener(topics = "${topic.name}") // é passado o topico que foi definido no applicationl.properties
+    public void consumer(ConsumerRecord<String, People> record, Acknowledgment ack){ // é necessário o tipo da String e o objeto que será consumido (o objeto people do avro), o ack é para não consumir uma mensagem que já foi lida
         var people = record.value(); // mensagem é recebida
 
         log.info("Mensagem consumida:" + people.toString());
 
-        var peopleEntitiy = com.example.kafkaspring.domain.People.builder().build(); //obtendo instancia do objeto
+        var peopleEntitiy = com.example.kafkaspring.domain.People.builder().build(); //obtendo instancia do objeto do domain
         peopleEntitiy.setId(people.getId().toString());
         peopleEntitiy.setCpf(people.getCpf().toString());
         peopleEntitiy.setName(people.getName().toString());

@@ -7,13 +7,13 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 
-
+// nessa classe é informado o topico e a mensagem a ser transicionada
 @Slf4j
 @Component
 public class PeopleProducer {
 
     private final String topicName;
-    private final KafkaTemplate<String, People> kafkaTemplate;
+    private final KafkaTemplate<String, People> kafkaTemplate; // o People utilizado é o que foi feito pelo Avro e não o do domain
 
 
     public PeopleProducer(@Value("${topic.name}") String topicName, KafkaTemplate<String, People> kafkaTemplate) {

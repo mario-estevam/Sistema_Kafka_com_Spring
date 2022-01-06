@@ -12,7 +12,7 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
-@Entity
+@Entity // nossa entidade que é refletida no banco de dados
 public class People {
     @Id
     @GeneratedValue(generator = "uuid")
@@ -21,6 +21,6 @@ public class People {
     private String name;
     private String cpf;
 
-    @OneToMany(mappedBy = "people", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "people", cascade = CascadeType.ALL) // anotação onetoMany pois uma pessoa tem vários filmes
     private List<Movie> movies;
 }
