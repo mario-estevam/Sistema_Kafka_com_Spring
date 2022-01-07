@@ -4,7 +4,7 @@ Integração de Spring com Kafka, usando os conceitos básicos de injeção de d
 
 # O que é o Apache Kafka?
 
-Plataforma de streaming de dados. Entrega e recebe bytes, e é utilizado em sistemas de comunicação em tempo real. <br/>
+o Kafka é uma plataforma de streaming de dados. Entrega e recebe bytes, e é utilizado em sistemas de comunicação em tempo real. <br/>
 
 # O que é necessário para rodar o sistema?
 São necessários alguns softwares/frameworks para o funcionamento do projeto, entre eles estão: <br/>
