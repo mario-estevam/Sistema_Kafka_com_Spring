@@ -25,7 +25,6 @@ https://github.com/mario-estevam/KafkaCompose
 O streaming de eventos é aplicado a uma ampla variedade de casos de uso em uma infinidade de setores e organizações. Seus muitos exemplos incluem: <br/>
 <ul>
   <li> Para processar pagamentos e transações financeiras em tempo real, como em bolsas de valores, bancos e seguros. </li>
-  <li> Schema Registry </li>
   <li> Para rastrear e monitorar carros, caminhões, frotas e remessas em tempo real, como na logística e na indústria automotiva.</li>
   <li> Para coletar e reagir imediatamente às interações e pedidos do cliente, como no varejo, no setor de hotéis e viagens e em aplicativos móveis. </li>
   <li> Para monitorar pacientes em cuidados hospitalares e prever mudanças nas condições para garantir o tratamento oportuno em emergências.
