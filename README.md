@@ -15,7 +15,7 @@ São necessários alguns softwares/frameworks para o funcionamento do projeto, e
   <li> Kafdrop </li>
 </ul>
  <br/>
-Estes softwares/framerworks estão disponivéis em containers docker, eu disponibilizo no meu github um arquivo docker-compose come estes containers <br/>
+Estes softwares/framerworks estão disponivéis em containers docker, eu disponibilizo no meu github um arquivo docker-compose com estes containers <br/>
 # Link
 <br/>
 https://github.com/mario-estevam/KafkaCompose
